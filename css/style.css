@@ -120,18 +120,50 @@ body {
   display: none;
 }
 
-#sidebar #sidebartop .sidebar-nav {
-  width: 70%;
+#sidebar #sidebartop ul {
   margin: 0 auto;
-  margin-top: 10px;
+  padding: 5px;
 }
 
-#sidebar .sidebar-nav-details {
+#sidebar .sidebar-details {
   display: none;
+  color: #707070;
+}
+
+#sidebar li:hover .sidebar-details {
+  font-weight: bold;
+  color: white;
 }
 
 #sidebar-playlist {
   display: none;
+  flex-grow: 1;
+  overflow: auto;
+  color: #707070;
+}
+
+#sidebar-playlist h2 {
+  margin: 10px 0;
+  color: white;
+}
+
+#sidebar-playlist ul li {
+  padding: 3px 0;
+}
+
+#sidebar-playlist li:hover a {
+  font-weight: bold;
+  color: white;
+}
+
+#sidebar-playlist .fa-plus {
+  background-color: #a3a3a3;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#sidebar-playlist .create-playlist {
+  margin: 10px 0;
 }
 
 #sidebar .download-app {
@@ -139,17 +171,26 @@ body {
   font-size: 1.5rem;
 }
 
+#sidebar .user-details {
+  margin: 0 auto;
+}
+
 #sidebar .user {
   border-radius: 50%;
   background-color: #808080;
-  width: 70%;
   margin: 10px auto;
-  padding: 10px;
+  padding: 5px;
+  display: block;
 }
 
 #sidebar .user img {
   display: block;
   margin: 0 auto;
+}
+
+#sidebar .sidebar-user-details {
+  display: none;
+  color: #707070;
 }
 
 #main-content {
@@ -182,15 +223,16 @@ body {
     padding: 20px;
   }
 
-  #sidebartop ul li {
+  #sidebartop ul li,
+  #sidebar-bottom ul li {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 5px 0;
   }
 
-  #sidebar .sidebar-nav-details {
+  #sidebar .sidebar-details {
     display: inline;
-    flex-grow: 1;
   }
   #sidebar .logo-small {
     display: none;
@@ -201,8 +243,29 @@ body {
     width: 70%;
   }
 
-  #sidebar #sidebartop .sidebar-nav {
+  #sidebar #sidebartop ul {
+    margin: 20px 0;
+  }
+
+  #sidebar #sidebar-playlist {
+    display: block;
+  }
+
+  #sidebar .user-details {
+    border-top: 1px solid #555555;
+  }
+
+  #sidebar .user {
+    margin: 0;
+    width: 2rem;
+  }
+
+  #sidebar img {
     width: 10%;
-    margin: 10px 0;
+  }
+
+  #sidebar-bottom .download-app {
+    font-size: 1rem;
+    padding: 20px 0;
   }
 }
