@@ -212,6 +212,24 @@ body {
 #player {
   height: var(--player-height);
   background-color: #282828;
+  display: flex;
+}
+
+#player * {
+  flex-grow: 1;
+}
+
+#song-info {
+  display: flex;
+}
+
+#player-action {
+  display: flex;
+  flex-direction: column;
+}
+
+#function {
+  margin: auto 0;
 }
 
 @media screen and (min-width: 576px) {
