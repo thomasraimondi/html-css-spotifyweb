@@ -25,10 +25,6 @@ ul {
   list-style: none;
 }
 
-/* ul li {
-  display: inline-block;
-} */
-
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -67,7 +63,6 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   row-gap: 2rem;
-
   margin-left: -1rem;
   margin-right: -1rem;
 }
@@ -105,6 +100,17 @@ section h2 {
   border-radius: 20px;
 }
 
+#player .pointer-progress {
+  border-radius: 50%;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -8px;
+  left: 25%;
+  display: none;
+}
+
 /* Top content */
 
 #top-content {
@@ -123,6 +129,17 @@ section h2 {
   justify-content: space-between;
   background-color: black;
 }
+
+#sidebar li:hover span {
+  font-weight: bold;
+  color: white;
+}
+
+#sidebar li:hover {
+  border-left: 2px solid greenyellow;
+}
+
+/* SIDEBAR TOP */
 
 #sidebar .logo-small {
   padding: 10px;
@@ -147,6 +164,8 @@ section h2 {
   color: #707070;
 }
 
+/* DISEBAR - PLAYLIST */
+
 #sidebar-playlist {
   display: none;
   flex-grow: 1;
@@ -170,15 +189,6 @@ section h2 {
   padding: 3px 10px;
 }
 
-#sidebar li:hover span {
-  font-weight: bold;
-  color: white;
-}
-
-#sidebar li:hover {
-  border-left: 2px solid greenyellow;
-}
-
 #sidebar-playlist .fa-plus {
   background-color: #a3a3a3;
   padding: 10px;
@@ -193,6 +203,8 @@ section h2 {
   color: white;
   font-weight: bold;
 }
+
+/* SIDEBAR USER SECTION */
 
 #sidebar .download-app {
   font-size: 1.5rem;
@@ -212,18 +224,13 @@ section h2 {
   padding: 5px;
   display: block;
 }
-/* 
-#sidebar .user img {
-  display: block;
-  margin: 0 auto;
-} */
 
 #sidebar .sidebar-user-details {
   display: none;
   color: #707070;
 }
 
-/* player */
+/* PLAYER */
 
 #player {
   height: var(--player-height);
@@ -238,11 +245,15 @@ section h2 {
   left: 0;
 }
 
+/* DIVISIONE DEL PLAYER IN 3 SPAZI UGUALI */
+
 #player #song-info,
 #player #player-action,
 #player #function {
   flex: 1 1 0;
 }
+
+/* PLAYER SONG-INFO */
 
 #player #song-info {
   display: none;
@@ -266,6 +277,8 @@ section h2 {
 #player #song-info .song-details {
   font-size: 0.7rem;
 }
+
+/* PLAYER ACTION */
 
 #player #player-action {
   display: flex;
@@ -318,16 +331,7 @@ section h2 {
   display: block;
 }
 
-#player .pointer-progress {
-  border-radius: 50%;
-  background-color: white;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: -8px;
-  left: 25%;
-  display: none;
-}
+/* PLAYER FUNCTION */
 
 #player #function {
   margin: auto 0;
@@ -370,7 +374,7 @@ section h2 {
   display: block;
 }
 
-/* Main Content */
+/* MAIN CONTENT */
 
 #main-content {
   width: calc(100% - var(--sidebar-width));
@@ -386,7 +390,8 @@ section h2 {
   );
 }
 
-/* Header main content */
+/* HEADER MAIN CONTENT */
+
 #main-content {
   height: calc(100vh - var(--player-height));
   color: white;
@@ -423,6 +428,8 @@ section h2 {
   padding: 5px;
 }
 
+/* MAIN CONTENT MAIN */
+
 #main-content #main-content-main ul li:hover {
   color: white;
   font-weight: bold;
@@ -439,6 +446,8 @@ section h2 {
 #main-content .container .col {
   width: 100%;
 }
+
+/* MAIN CONTENTE - CARD ALBUM */
 
 #main-content-main .card-album {
   text-align: center;
@@ -464,6 +473,10 @@ section h2 {
   font-size: 2rem;
   padding: auto 0;
 }
+
+/* MEDIA QUERY */
+
+/* DA 340PX  IN SU*/
 @media screen and (min-width: 340px) {
   #player #song-info {
     display: flex;
@@ -473,6 +486,8 @@ section h2 {
     display: flex;
   }
 }
+
+/* DA 440PX IN SU*/
 @media screen and (min-width: 440px) {
   #main-content #main-content-header {
     justify-self: flex-end;
@@ -506,6 +521,8 @@ section h2 {
     display: block;
   }
 }
+
+/* DA 576PX IN SU*/
 @media screen and (min-width: 576px) {
   :root {
     --sidebar-width: 200px;
@@ -558,6 +575,8 @@ section h2 {
     padding: 20px 10px;
   }
 }
+
+/*DA 768PX IN SU*/
 @media screen and (min-width: 768px) {
   #main-content #main-content-main ul li {
     width: calc(100% / 5);
@@ -569,7 +588,13 @@ section h2 {
     display: inline;
     padding: 5px;
   }
+
+  #player #function {
+    font-size: 16px;
+  }
 }
+
+/* DA 992PX IN SU */
 @media screen and (min-width: 992px) {
   #main-content #main-content-main ul li {
     width: calc(100% / 9);
