@@ -490,7 +490,7 @@ section h2 {
 /* DA 440PX IN SU*/
 @media screen and (min-width: 440px) {
   #main-content #main-content-header {
-    justify-self: flex-end;
+    justify-content: flex-end;
   }
   #main-content #main-content-main ul {
     flex-direction: row;
