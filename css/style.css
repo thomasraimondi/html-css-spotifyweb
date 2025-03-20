@@ -429,20 +429,12 @@ section h2 {
   font-size: 0.7rem;
   color: #7c7e84;
   padding: 5px;
-}
-
-#main-content #main-content-main ul li .border {
-  border: 1px solid transparent;
-  width: 50%;
-  margin: 5px auto;
+  border-bottom: 1px solid transparent;
 }
 
 #main-content #main-content-main ul li:hover {
   color: white;
   font-weight: bold;
-}
-
-#main-content #main-content-main ul li:hover .border {
   border-color: #adff2e;
 }
 
