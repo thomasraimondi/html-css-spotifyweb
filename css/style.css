@@ -100,18 +100,46 @@ section h2 {
   border-radius: 20px;
 }
 
+/* PROGRESS BAR */
+
+#player .progress-bar {
+  flex-grow: 1;
+  margin: auto 0;
+}
+
+#player .progress-bar-full {
+  border: 2px solid #5a5a5a;
+  width: 100%;
+  display: block;
+}
+#player .progress-bar-on {
+  top: 0;
+  left: 0;
+  border: 2px solid white;
+  width: 30%;
+  position: relative;
+}
+#player .progress-bar:hover .progress-bar-on {
+  border-color: #adff2e;
+}
+
+#player .progress-bar:hover .pointer-progress {
+  display: block;
+}
+
 #player .pointer-progress {
   border-radius: 50%;
   background-color: white;
   width: 20px;
   height: 20px;
   position: absolute;
-  top: -8px;
-  left: 30%;
+  top: 50%;
+  translate: 50% -50%;
+  right: 0;
   display: none;
 }
 
-/* Top content */
+/* TOP CONTENT */
 
 #top-content {
   height: calc(100vh - var(--player-height));
@@ -272,10 +300,15 @@ section h2 {
 
 #player #song-info span {
   display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #player #song-info .song-details {
   font-size: 0.7rem;
+  flex-grow: 1;
+  max-width: 20%;
 }
 
 /* PLAYER ACTION */
@@ -283,6 +316,11 @@ section h2 {
 #player #player-action {
   display: flex;
   flex-direction: column;
+}
+
+#player #player-action .action,
+#player #player-action .progress {
+  flex: 1 1 0;
 }
 
 #player #player-action .action {
@@ -302,32 +340,32 @@ section h2 {
   margin: auto 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 5px;
 }
 
-#player #player-action .song-progress-bar {
-  position: relative;
+#player .progress-bar {
   flex-grow: 1;
   margin: auto 0;
 }
 
-#player #player-action .progress-bar {
+#player .progress-bar-full {
   border: 2px solid #5a5a5a;
   width: 100%;
   display: block;
 }
-#player #player-action .progress-bar-on {
-  position: absolute;
+#player .progress-bar-on {
   top: 0;
   left: 0;
   border: 2px solid white;
   width: 30%;
+  position: relative;
 }
-#player #player-action .song-progress-bar:hover .progress-bar-on {
+#player .progress-bar:hover .progress-bar-on {
   border-color: #adff2e;
 }
 
-#player #player-action .song-progress-bar:hover .pointer-progress {
+#player .progress-bar:hover .pointer-progress {
   display: block;
 }
 
@@ -352,26 +390,8 @@ section h2 {
 }
 
 #player #function .volume-bar {
-  border: 2px solid #5a5a5a;
-  width: 100%;
+  width: 50%;
   display: none;
-}
-
-#player #function .volume-on {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 2px solid white;
-  width: 30%;
-  display: none;
-}
-
-#player #function .volume-progress-bar:hover .volume-on {
-  border-color: #adff2e;
-}
-
-#player #function .volume-progress-bar:hover .pointer-progress {
-  display: block;
 }
 
 /* MAIN CONTENT */
@@ -530,11 +550,7 @@ section h2 {
   }
 
   #player #function .volume-bar {
-    display: block;
-    width: 100%;
-  }
-  #player #function .volume-on {
-    display: block;
+    display: flex;
   }
 }
 
